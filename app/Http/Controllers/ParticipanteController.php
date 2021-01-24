@@ -43,6 +43,6 @@ class ParticipanteController extends Controller
      */
     public function destroy(Participante $participante)
     {
-        //
+        return response(null, $participante->delete() ? 200 : 400);
     }
 }
