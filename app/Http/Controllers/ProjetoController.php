@@ -35,9 +35,11 @@ class ProjetoController extends Controller
         return compact('projeto', 'participantes');
     }
 
-    public function update(Request $request, Projeto $projeto)
+    public function update(ProjetoRequest $request, Projeto $projeto)
     {
         $update = $projeto->update($request->all());
+
+        $projeto->participantes()->sync($request->participantes);
 
         return response(null, $update ? 200 : 400);
     }
