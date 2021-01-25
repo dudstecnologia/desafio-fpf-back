@@ -16,7 +16,7 @@ class ProjetoController extends Controller
 
     public function index()
     {
-        //
+        return $this->projeto->all();
     }
 
     public function store(ProjetoRequest $request)
@@ -40,6 +40,6 @@ class ProjetoController extends Controller
 
     public function destroy(Projeto $projeto)
     {
-        //
+        return response(null, $projeto->delete() ? 200 : 400);
     }
 }
