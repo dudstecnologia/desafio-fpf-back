@@ -21,7 +21,11 @@ class ProjetoController extends Controller
 
     public function store(ProjetoRequest $request)
     {
-        return $this->projeto->create($request->all());
+        $projeto = $this->projeto->create($request->all());
+
+        $projeto->participantes()->sync($request->participantes);
+
+        return $projeto;
     }
 
     public function show(Projeto $projeto)

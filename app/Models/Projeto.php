@@ -15,4 +15,9 @@ class Projeto extends Model
         'valor',
         'risco'
     ];
+
+    public function participantes()
+    {
+        return $this->belongsToMany(Participante::class);
+    }
 }

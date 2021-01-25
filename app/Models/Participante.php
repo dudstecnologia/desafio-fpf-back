@@ -21,4 +21,9 @@ class Participante extends Model
     protected $fillable = [
         'nome'
     ];
+
+    public function projetos()
+    {
+        return $this->belongsToMany(Projeto::class);
+    }
 }
