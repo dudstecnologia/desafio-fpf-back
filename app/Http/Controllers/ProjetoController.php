@@ -44,6 +44,8 @@ class ProjetoController extends Controller
 
     public function destroy(Projeto $projeto)
     {
+        $projeto->participantes()->sync([]);
+
         return response(null, $projeto->delete() ? 200 : 400);
     }
 }
