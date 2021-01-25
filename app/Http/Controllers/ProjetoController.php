@@ -30,12 +30,16 @@ class ProjetoController extends Controller
 
     public function show(Projeto $projeto)
     {
-        //
+        $participantes = $projeto->participantes;
+
+        return compact('projeto', 'participantes');
     }
 
     public function update(Request $request, Projeto $projeto)
     {
-        //
+        $update = $projeto->update($request->all());
+
+        return response(null, $update ? 200 : 400);
     }
 
     public function destroy(Projeto $projeto)
