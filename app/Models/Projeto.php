@@ -13,8 +13,6 @@ class Projeto extends Model
         'data_inicio',
         'data_termino',
         'valor',
-        'risco',
-        'investimento',
-        'retorno'
+        'risco'
     ];
 }

@@ -19,9 +19,7 @@ class CreateProjetosTable extends Migration
             $table->string('data_inicio', 10);
             $table->string('data_termino', 10);
             $table->bigInteger('valor');
-            $table->enum('risco', [0, 1, 2]);
-            $table->bigInteger('investimento');
-            $table->bigInteger('retorno');
+            $table->integer('risco');
         });
     }
 
